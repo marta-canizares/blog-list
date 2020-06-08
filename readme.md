@@ -4,12 +4,12 @@
 Let's imagine a situation, where you receive an email that contains the following application body:
 
 ```js
-const http = require('http')
-const express = require('express')
-const app = express()
-const cors = require('cors')
-const mongoose = require('mongoose')
 
+import express from 'express'
+import cors from 'cors'
+import mongoose from 'mongoose'
+
+const app = express()
 const blogSchema = mongoose.Schema({
   title: String,
   author: String,
