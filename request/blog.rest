@@ -1,0 +1,7 @@
+#List
+GET http://localhost:9000/api/blogs
+
+###########
+
+#Create
+POST http://localhost:9000/api/blogs
