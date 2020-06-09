@@ -1,25 +1,28 @@
-import connection from '../../mongo/mongo.js';
-import Blog from './model.js'
-import { response } from 'express';
+import connection from '../mongo/mongo.js'
+import Blog from './model.js';
+
 class BlogDAO {
+
     constructor() {
+
     }
+
     list() {
-        return Blog
-            .find({});
+        return Blog.find({})
     }
+
+
     create(pBlog) {
         const blog = new Blog({
             title: pBlog.title,
             author: pBlog.author,
             url: pBlog.url,
-            likes: pBlog.likes
+            likes: pBlog.likes,
         })
-        blog
-            .save()
-            .then(result => {
-                response.status(201).json(result)
-            })
+        return blog.save();
     }
+
 }
+
 export default new BlogDAO();
+
